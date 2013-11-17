@@ -4,7 +4,7 @@ My zshrc files
 
 ## How to use
 
-Simply source the files in your .zshrc.
+Simply source the files in your .zshrc:
 
 ```sh
 for FILE in <path to the repository checkout>/*.sh; do
@@ -12,7 +12,7 @@ for FILE in <path to the repository checkout>/*.sh; do
 done
 ```
 
-Or just source the files you want.
+Or just source the files you want:
 
 ```sh
 source <path to the repository checkout>/exports.sh
