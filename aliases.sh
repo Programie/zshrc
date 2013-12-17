@@ -47,12 +47,14 @@ restartapache()
 		apache2ctl restart
 		if [ "$?" = "0" ]; then
 			echo "Apache restart successful"
+			exit 0
 		else
 			echo "Apache restart FAILED!"
 		fi
 	else
 		echo "Apache configuration test FAILED!"
 	fi
+	exit 1
 }
 
 
