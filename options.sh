@@ -11,4 +11,4 @@ setopt extended_history
 setopt hist_save_no_dups
 setopt hist_expire_dups_first
 setopt hist_find_no_dups
-setopt correct_all
+setopt correct_all # Automatically try to correct typos
