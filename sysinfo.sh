@@ -1,21 +1,21 @@
 which uptime > /dev/null 2>&1
 if [ "$?" = "0" ]; then
-	UPTIME_DAYS="`uptime | sed -nr 's/.*\s+up ([0-9]+) day(.*)/\1/p'`" # Get number of days (Empty string if < 1 day)
-	UPTIME="`uptime | sed -nr 's/.*\s+up ([0-9]+) day(.*) ([0-9]+):([0-9]+)(.*)/\3:\4/p'`" # Get uptime in 'hh:mm' format (Empty string if time < 1 day)
+	UPTIME_DAYS="`uptime | sed -nE 's/.*\s+up ([0-9]+) day(.*)/\1/p'`" # Get number of days (Empty string if < 1 day)
+	UPTIME="`uptime | sed -nE 's/.*\s+up ([0-9]+) day(.*) ([0-9]+):([0-9]+)(.*)/\3:\4/p'`" # Get uptime in 'hh:mm' format (Empty string if time < 1 day)
 
 	if [ -z "$UPTIME" ]; then
-		UPTIME_MIN="`uptime | sed -nr 's/.*\s+up ([0-9]+) day(.*) ([0-9]+) min(.*)/\3/p'`" # Get uptime in 'x min' format (Empty string if time < 60 min or < 1 day)
+		UPTIME_MIN="`uptime | sed -nE 's/.*\s+up ([0-9]+) day(.*) ([0-9]+) min(.*)/\3/p'`" # Get uptime in 'x min' format (Empty string if time < 60 min or < 1 day)
 		if [ "$UPTIME_MIN" ]; then
 			UPTIME="$UPTIME_MIN min"
 		fi
 	fi
 
 	if [ -z "$UPTIME" ]; then
-		UPTIME="`uptime | sed -nr 's/.*\s+up([ ]+)([0-9]+):([0-9]+)(.*)/\2:\3/p'`" # Get uptime in 'hh:mm' format (Empty string if time < 60 min or >= 1 day)
+		UPTIME="`uptime | sed -nE 's/.*\s+up([ ]+)([0-9]+):([0-9]+)(.*)/\2:\3/p'`" # Get uptime in 'hh:mm' format (Empty string if time < 60 min or >= 1 day)
 	fi
 
 	if [ -z "$UPTIME" ]; then
-		UPTIME_MIN="`uptime | sed -nr 's/.*\s+up ([0-9]+) min(.*)/\1/p'`" # Get uptime in 'x min' format
+		UPTIME_MIN="`uptime | sed -nE 's/.*\s+up ([0-9]+) min(.*)/\1/p'`" # Get uptime in 'x min' format
 		if [ "$UPTIME_MIN" ]; then
 			UPTIME="$UPTIME_MIN min"
 		fi
@@ -29,7 +29,7 @@ if [ "$?" = "0" ]; then
 		fi
 	fi
 
-	LOAD="`uptime | sed -nr 's/.*\s+load average: (.*)/\1/p'`"
+	LOAD="`uptime | sed -nE 's/.*\s+load average: (.*)/\1/p'`"
 else
 	UPTIME="N/A"
 	LOAD="N/A"
