@@ -1,7 +1,14 @@
-alias ls='ls --color=auto' # Normal ls with colored items
-alias ll='ls --color=auto -lh' # Same as 'ls' but also show permissions, readable file sizes and more
-alias l='ls --color=auto -lhA' # Same as 'll' but also show items starting with a dot
-alias lm='ls --color=auto -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
+if [ "`uname`" = "Darwin" ]; then
+	alias ll='ls -lh' # Same as 'ls' but also show permissions, readable file sizes and more
+	alias l='ls -lhA' # Same as 'll' but also show items starting with a dot
+	alias lm='ls -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
+else
+	alias ls='ls --color=auto' # Normal ls with colored items
+	alias ll='ls --color=auto -lh' # Same as 'ls' but also show permissions, readable file sizes and more
+	alias l='ls --color=auto -lhA' # Same as 'll' but also show items starting with a dot
+	alias lm='ls --color=auto -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
+fi
+
 alias iftop='sudo iftop' # Always start 'iftop' as root (Required by this command)
 alias exe='sudo chmod +x' # Shortcut to set the executable bit for a file
 alias install='sudo aptitude install' # Install packages
