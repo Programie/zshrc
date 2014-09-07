@@ -2,24 +2,11 @@ if [ "`uname`" = "Darwin" ]; then
 	alias ll='ls -lh' # Same as 'ls' but also show permissions, readable file sizes and more
 	alias l='ls -lhA' # Same as 'll' but also show items starting with a dot
 	alias lm='ls -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
-
-	alias install='sudo brew install' # Install packages
-	alias remove='sudo brew uninstall' # Remove packages
-	alias search='brew search' # Search for packages
-	alias show='brew info' # Show information about a package
 else
 	alias ls='ls --color=auto' # Normal ls with colored items
 	alias ll='ls --color=auto -lh' # Same as 'ls' but also show permissions, readable file sizes and more
 	alias l='ls --color=auto -lhA' # Same as 'll' but also show items starting with a dot
 	alias lm='ls --color=auto -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
-
-
-	alias install='sudo aptitude install' # Install packages
-	alias remove='sudo aptitude remove' # Remove packages without removing the configuration files of these packages
-	alias purge='sudo aptitude purge' # Remove packages and the configuration files of these packages
-	alias search='aptitude search' # Search for packages
-	alias show='aptitude show' # Show information about a package
-	alias cleanup='sudo aptitude autoclean && sudo aptitude clean' # Clean up aptitude (Remove old files from cache, etc.)
 fi
 
 alias iftop='sudo iftop' # Always start 'iftop' as root (Required by this command)
