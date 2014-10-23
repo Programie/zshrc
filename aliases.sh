@@ -10,13 +10,11 @@ else
 fi
 
 alias iftop='sudo iftop' # Always start 'iftop' as root (Required by this command)
-alias exe='sudo chmod +x' # Shortcut to set the executable bit for a file
 alias root='sudo $SHELL' # Start zsh as root
 alias df='df -h' # Show Filesystem information in human readable format
 alias fs='du -sch *' # Show the disk usage of the folders in the current directory
 alias ports='netstat -tulanp' # Show open ports
 alias lmnt='mount | column -t' # Show mounted devices in a pretty and human readable format
-alias localssh='ssh root@localhost' # Open SSH connection to localhost using root (e.g. to connect to a virtual machine with NAT)
 alias ,='popd' # Shortcut to switch to previous directory
 
 # Check if the local svn working copy is up to date without updating
