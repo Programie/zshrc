@@ -13,6 +13,7 @@ alias iftop='sudo iftop' # Always start 'iftop' as root (Required by this comman
 alias root='sudo $SHELL' # Start zsh as root
 alias df='df -h' # Show Filesystem information in human readable format
 alias fs='du -sch *' # Show the disk usage of the folders in the current directory
+alias grep='grep --color=auto' # Enable highlighting of the matches
 alias ports='netstat -tulanp' # Show open ports
 alias lmnt='mount | column -t' # Show mounted devices in a pretty and human readable format
 alias ,='popd' # Shortcut to switch to previous directory
