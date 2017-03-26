@@ -1,7 +1,7 @@
 if [ "`uname`" = "Darwin" ]; then
-	alias ll='ls -lh' # Same as 'ls' but also show permissions, readable file sizes and more
-	alias l='ls -lhA' # Same as 'll' but also show items starting with a dot
-	alias lm='ls -lhA | more' # Same as 'l' but pipe it through 'more' to scroll the list
+	alias ll='ls -lhG' # Same as 'ls' but also show permissions, readable file sizes and more
+	alias l='ls -lhAG' # Same as 'll' but also show items starting with a dot
+	alias lm='ls -lhAG | more' # Same as 'l' but pipe it through 'more' to scroll the list
 else
 	alias ls='ls --color=auto' # Normal ls with colored items
 	alias ll='ls --color=auto -lh' # Same as 'ls' but also show permissions, readable file sizes and more
